@@ -134,7 +134,7 @@ void Editor::HandleEvents(float deltaTime) {
                 if (event.mouseButton.button == sf::Mouse::Middle) {}
             }
         }
-        
+        ui->HandleTextInput(event);
         // reset the input delay
         inputDelay = 0.01f;
     }
@@ -145,6 +145,7 @@ void Editor::Render(sf::RenderWindow& window) {
     // ui rendering
     window.setView(uiView);
     ui->DrawUI(window);
+    ui->DrawTextInput(window);
     // layer rendering
     window.setView(layerView);
     if (tileMap->showMergedLayers) {

@@ -8,6 +8,8 @@
 #include <iostream>
 #include <vector>
 #include <set>
+#include "json.hpp"
+#include <fstream>
 
 class Editor;
 struct TileAtlas;
@@ -61,8 +63,8 @@ public:
 	void RemoveLayer(int index);
 	void MergeAllLayers(sf::RenderTarget& target, bool showMergedLayers);
 	void Render(sf::RenderTarget& target);
-	bool SaveToFile(const std::string& filename) const;
-	bool LoadFromFile(const std::string& filename);
+	bool SaveTileMap(const std::string& filename) const;
+	bool LoadTileMap(const std::string& filename);
 	// getter functions
 	int GetTileSize() const { return layerTileSize; }
 	int GetCurrentLayerIndex() const { return activeLayerIndex; }

@@ -20,12 +20,19 @@ private:
         sf::Text label; // label of text that will sit on the button
     };
     std::vector<Button> buttons;    // list of all the button structs in the ui
-
-    bool wasMergePressed = true;
+    
+    bool isTextInputActive = false; // tracks the text input for filenames (for save and load buttons)
+    std::string inputText;  // store the input text (filename) entered
+    sf::RectangleShape inputBox;    // rectangle element for the input box
+    sf::Text inputTextDisplay;  // text to display the input to the screen
+    std::string lastClickedButton;  // string to store which button was pressed (between save or load tilemap buttons)
 public:
     UI(Editor& editor);
     bool Initialize();
     void HandleInteraction(const sf::Vector2f& mousePos, sf::RenderWindow& window);
+    void ActivateTextInput();
+    void HandleTextInput(const sf::Event& event);
+    void DrawTextInput(sf::RenderWindow& window);
     void DrawUI(sf::RenderWindow& window);
 };
 #endif

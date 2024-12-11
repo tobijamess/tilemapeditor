@@ -51,7 +51,7 @@ void TileAtlas::DrawAtlas(sf::RenderTarget& target) {
     atlasSprite.setScale(scaledTileSize / editor.baseTileSize, scaledTileSize / editor.baseTileSize);
     atlasSprite.setPosition(-offset);   // set the atlas sprite position based on the panning offset
     target.draw(atlasSprite);
-    // draw grid with fixed dimensions of 50x50 by tileSize
+    // draw grid with fixed dimensions of 50x100
     int gridWidth = 50;
     int gridHeight = 100;
     sf::RectangleShape line;    // create line shape to draw grid with

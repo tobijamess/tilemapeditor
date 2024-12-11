@@ -27,6 +27,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="editor.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="layer.h" />
     <ClInclude Include="tileatlas.h" />
     <ClInclude Include="ui.h" />
